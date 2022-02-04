@@ -14,12 +14,11 @@ export function App(){
             return [...prevTasks, {id: uuidv4(), task, completed:false}];
         });
         taskRef.current.value = null // Limpiar el input
-
     };
     return (
         <div className="container py-5">
-            <div className="card">
-                <div className="card-header">
+            <div className="card text-dark bg-warning">
+                <div className="card-header text-center">
                     <h3>Lista de Tareas</h3>
                 </div>
                 <div className="card-body">
