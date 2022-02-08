@@ -7,9 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export function App(){
     const [listas, setListas] = useState([{id:1, task:"Tarea", completed:false},]);
+    //Referencia para obtener a la data ingresada y usarla en el handle 
     const taskRef = useRef();
     // Esta funcion es para manejar el checkbox
-    const toggelTask =(id) => {
+    const toggelTask = (id) => {
         // realizar una copia de las tareas en newTasks
         const newTasks = [...listas];
         // Buscar la tarea donde el id de la tarea sea igual al id
@@ -20,7 +21,7 @@ export function App(){
         task.completed = !task.completed;
         // Se actualiza el listado de las tareas
         setListas(newTasks);
-    }
+    };
     const AgregarTareas = () =>{
         const task = taskRef.current.value;
         if (task === "") return;
